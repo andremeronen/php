@@ -1,0 +1,13 @@
+<?php
+
+$yhendus = mysqli_connect("localhost", "root", "", "andmebaas");
+
+$tulemus = mysqli_query($yhendus, "SELECT * FROM autod");
+
+while($rida = mysqli_fetch_assoc($tulemus)) {
+    echo $rida['mark'] . " ";
+    echo $rida['mudel'] . " ";
+    echo $rida['hind'] . "€<br>";
+}
+
+?>
